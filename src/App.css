@@ -1,38 +1,110 @@
-.App {
+body {
+  margin: 0;
+  padding: 0;
+  font-family: sans-serif;
+}
+
+* {
+  box-sizing: border-box;
+}
+
+.wrapper {
+  background-color: #fff;
+}
+
+.container {
+  max-width: 1000px;
+  margin: 0 auto;
+}
+
+.card {
+  background-color: aliceblue;
+  margin: 50px 0;
+}
+
+.card-header {
+  padding: 20px 0;
+  text-align: center;
+  color: #fff;
+  background-color: #548ca8;
+}
+
+.card-header h2 {
+  font-size: 30px;
+}
+
+/* car search box */
+.card-search {
+  display: flex;
+  justify-content: center;
+  padding: 20px 0;
+  background-color: #c490e4;
+}
+
+.card-search-box {
+  display: flex;
+  width: 50%;
+  justify-content: center;
+}
+
+.card-search-input {
+  width: 100%;
+}
+
+.card-search-input input {
+  border: none;
+  outline: none;
+  width: 100%;
+  padding: 13px 12px;
+  border-top-left-radius: 25px;
+  border-bottom-left-radius: 25px;
+}
+
+.card-search-box button {
+  border: none;
+  background-color: tomato;
+  padding: 13px 15px;
+
+  border-top-right-radius: 25px;
+  border-bottom-right-radius: 25px;
+}
+
+.card-search-box button i {
+  color: #fff;
+}
+
+.card-box {
+  padding-top: 30px;
+}
+
+.card-box table {
+  width: 100%;
+}
+
+.card-box table th {
+  background-color: #d62ad0;
+  padding: 20px 0;
+  color: #fff;
+  border: none;
+}
+
+.card-box table td {
   text-align: center;
 }
 
-.App-logo {
-  height: 40vmin;
-  pointer-events: none;
+.card-box table tr:nth-child(even) {
+  background-color: #cdf0ea;
 }
 
-@media (prefers-reduced-motion: no-preference) {
-  .App-logo {
-    animation: App-logo-spin infinite 20s linear;
-  }
+.img-box {
+  padding: 10px;
+  width: 100px;
 }
 
-.App-header {
-  background-color: #282c34;
-  min-height: 100vh;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  font-size: calc(10px + 2vmin);
-  color: white;
-}
-
-.App-link {
-  color: #61dafb;
-}
-
-@keyframes App-logo-spin {
-  from {
-    transform: rotate(0deg);
-  }
-  to {
-    transform: rotate(360deg);
-  }
+.img-box img {
+  height: 100%;
+  width: 100%;
+  border-radius: 50%;
+  object-fit: contain;
+  object-position: top;
 }
