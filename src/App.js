@@ -2,10 +2,49 @@ import React, { Component } from 'react';
 import './App.css';
 import profileImage from './by.jpg';
 
-function Header(props) {
+let studentsList = [
+  {
+    name: 'React',
+    email: 'react@gmail.com',
+    phone: '83993939',
+    dob: '1996-3-3',
+  },
+  {
+    name: 'Node',
+    email: 'node@gmail.com',
+    phone: '83993939',
+    dob: '1990-5-3',
+  },
+  {
+    name: 'python',
+    email: 'python@gmail.com',
+    phone: '83993939',
+    dob: '1990-5-3',
+  },
+  {
+    name: 'php',
+    email: 'php@gmail.com',
+    phone: '83993939',
+    dob: '1990-5-3',
+  },
+  {
+    name: 'c++',
+    email: 'c++@gmail.com',
+    phone: '83993939',
+    dob: '1990-5-3',
+  },
+  {
+    name: 'c',
+    email: 'c@gmail.com',
+    phone: '83993939',
+    dob: '1990-5-3',
+  },
+];
+
+function Header({ title }) {
   return (
     <div className='card-header'>
-      <h2>{props.title}</h2>
+      <h2>{title}</h2>
       <p>
         Lorem ipsum dolor, sit amet consectetur adipisicing elit. Quis
         consectetur animi sunt. Sint odit at laudantium exercitationem ad
@@ -36,6 +75,27 @@ function SearchBar(props) {
   );
 }
 
+function StudentList(props) {
+  return (
+    <>
+      <div className='card-box'>
+        <table>
+          <tr>
+            <th>Image</th>
+            <th>Name</th>
+            <th>Phone</th>
+            <th>Email</th>
+            <th>DOB</th>
+            <th>Action</th>
+          </tr>
+
+          {props.children}
+        </table>
+      </div>
+    </>
+  );
+}
+
 function StudentInfo({ name, phone, email, dob }) {
   return (
     <tr>
@@ -54,8 +114,12 @@ function StudentInfo({ name, phone, email, dob }) {
 }
 
 class App extends Component {
-
-  
+  constructor() {
+    super();
+    this.state = {
+      students: studentsList,
+    };
+  }
 
   render() {
     return (
@@ -64,34 +128,22 @@ class App extends Component {
           <div className='wrapper'>
             <div className='container'>
               <div className='card'>
-                <Header title='Studnets List' />
+                <Header title='Student List' />
 
                 <SearchBar />
 
-                <div className='card-box'>
-                  <table>
-                    <tr>
-                      <th>Image</th>
-                      <th>Name</th>
-                      <th>Phone</th>
-                      <th>Email</th>
-                      <th>DOB</th>
-                      <th>Action</th>
-                    </tr>
-                    <StudentInfo
-                      name='Ram'
-                      phone='9283982398'
-                      email='a@gmail.com'
-                      dob='2020-1-1'
-                    />
-                    <StudentInfo
-                      name='Shyam'
-                      phone='9283982398'
-                      email='s@gmail.com'
-                      dob='2020-1-1'
-                    />
-                  </table>
-                </div>
+                <StudentList>
+                  {this.state.students.map(function (student, index) {
+                    return (
+                      <StudentInfo
+                        name={student.name}
+                        phone={student.phone}
+                        email={student.email}
+                        dob={student.dob}
+                      />
+                    );
+                  })}
+                </StudentList>
               </div>
             </div>
           </div>
