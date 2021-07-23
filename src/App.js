@@ -75,7 +75,11 @@ class App extends Component {
   };
 
   deleteStudent = (id) => {
-    alert(id);
+    let updatedStudent = this.state.students.filter((student) => {
+      return student.id !== id;
+    });
+
+    this.setState({ students: updatedStudent });
   };
 
   render() {
