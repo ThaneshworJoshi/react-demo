@@ -1,13 +1,13 @@
-import StudentInfo from './StudentInfo';
+import StudentInfo from "./StudentInfo";
 
 function StudentList({ students, deleteStudent }) {
   return (
     <>
-      <div className='card-box'>
+      <div className="card-box">
         <table>
           <thead>
             <tr>
-              <tr>Id</tr>
+              <th>Id</th>
               <th>Image</th>
               <th>Name</th>
               <th>Phone</th>
